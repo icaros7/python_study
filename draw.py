@@ -1,0 +1,21 @@
+import turtle as t
+t.speed(0)
+t.up()
+t.back(200)
+t.left(90)
+t.forward(200)
+t.right(90)
+t.down()
+t.speed(0)
+t.pensize(3)
+
+for i in range(360) :
+    t.pencolor("red")
+    t.forward(200)
+    t.pencolor("yellow")
+    t.forward(100)
+    t.pencolor("orange")
+    t.forward(50)
+    t.right(89)
+t.right(89)
+t.circle(100)
