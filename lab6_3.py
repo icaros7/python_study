@@ -80,5 +80,4 @@ f2.setNumer(2)
 f2.print()
 
 # f1과 f2를 더한 결과를 출력
-# f1.add()의 반환 타입이 FRaction이므로 Fraction의 메쏘드인 print() 수행 가능
-f1.add(f2).print()
+f1.add(f2).print()  # f1.add()의 반환 타입이 FRaction이므로 Fraction의 메쏘드인 print() 수행 가능
