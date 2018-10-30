@@ -48,7 +48,7 @@ class Fraction:
         # 결과의 분자 계산
         n = self.numer * o.denom + self.denom * o.numer
         if (n % tong == 0) and (d % tong == 0):  # 통분해야할 것이 있다면
-            r = Fraction(n / tong, d / tong)  # 결과값을 통분 한 뒤 해당 값으로 Fraction 분수 생성
+            r = Fraction(int(n / tong), int(d / tong))  # 결과값을 통분 한 뒤 해당 값으로 Fraction 분수 생성
         else:
             r = Fraction(n, d)  # 결과 값을 포함하는 Fraction 분수 생성
         return r
@@ -65,7 +65,7 @@ class Fraction:
         # 결과의 분자 계산
         n = self.numer * o.denom - self.denom * o.numer
         if (n % tong == 0) and (d % tong == 0):  # 통분해야할 것이 있다면
-            r = Fraction(n / tong, d / tong)  # 결과값을 통분 한 뒤 해당 값으로 Fraction 분수 생성
+            r = Fraction(int(n / tong), int(d / tong))  # 결과값을 통분 한 뒤 해당 값으로 Fraction 분수 생성
         else:
             r = Fraction(n, d)  # 결과 값을 포함하는 Fraction 분수 생성
         return r
@@ -82,7 +82,7 @@ class Fraction:
         # 결과의 분자 계산
         n = self.numer * o.numer
         if (n % tong == 0) and (d % tong == 0):  # 통분해야할 것이 있다면
-            r = Fraction(n / tong, d / tong)  # 결과값을 통분 한 뒤 해당 값으로 Fraction 분수 생성
+            r = Fraction(int(n / tong), int(d / tong))  # 결과값을 통분 한 뒤 해당 값으로 Fraction 분수 생성
         else:
             r = Fraction(n, d)  # 결과 값을 포함하는 Fraction 분수 생성
         return r
@@ -99,16 +99,51 @@ class Fraction:
         # 결과의 분자 계산
         n = self.numer * o.denom
         if (n % tong == 0) and (d % tong == 0):  # 통분해야할 것이 있다면
-            r = Fraction(n / tong, d / tong)  # 결과값을 통분 한 뒤 해당 값으로 Fraction 분수 생성
+            r = Fraction(int(n / tong), int(d / tong))  # 결과값을 통분 한 뒤 해당 값으로 Fraction 분수 생성
         else:
             r = Fraction(n, d)  # 결과 값을 포함하는 Fraction 분수 생성
         return r
+
+    def __add__(self, o):
+        r = Fraction(5, 3)
+        return r
+
+    def __str__(self):
+        return str(self.numer) + "/" + str(self.denom)
+
+    def __eq__(self, other):
+        """
+        통분 해야하는가?
+        """
+        g1 = gcd(self.numer, self,denom)
+        g2 = gcd(other.numer, other, denom)
+        if (self.numer//g1 == other.numer//g2) and (self.denom//g1 == other.denom//g2):
+            return True
+        else:
+            return False
+
+    def __ne__(self, other):
+        """
+        두 분수가 같으면 참, 다르면 거짓
+        """
+        if self == other:
+            return True
+        else:
+            return False
 
 
 f1 = Fraction(1, 2)  # Fraction 인스턴스 생성
 f2 = Fraction(5, 4)  # Fraction 인스턴스 생성
 
+"""
+print 매서드가 아닌 __str__ 매직 매서드를 쓰기 위해 주석처리
 f1.add(f2).print(f1, f2, "+")
 f1.minus(f2).print(f1, f2, "-")
 f1.times(f2).print(f1, f2, "*")
 f1.div(f2).print(f1, f2, "/")
+"""
+
+print(f1, "+", f2, "=", f1.add(f2))
+print(f1, "-", f2, "=", f1.minus(f2))
+print(f1, "*", f2, "=", f1.times(f2))
+print(f1, "/", f2, "=", f1.div(f2))
