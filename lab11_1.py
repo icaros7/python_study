@@ -37,8 +37,8 @@ class intSet:
     def __str__(self):
         self.vals.sort()
         s = ""
-        for i in range(0,len(self.vals)):
-            s+=str(self.vals[i]) + " "
+        for i in range(0, len(self.vals)):
+            s += str(self.vals[i]) + " "
         return s
 
 
