@@ -88,3 +88,7 @@ modules.xml
 
 
 # End of https://www.gitignore.io/api/pycharm+all
+# My Settings for PyCharm
+.idea/Python.iml
+.idea/workspace.xml
+.idea/misc.xml
