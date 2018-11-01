@@ -11,30 +11,29 @@
 """
 
 
-class intSet:
-    def __init__(self):
-        self.vals = []
+class intSet:  # Class 정의
+    def __init__(self):  # Initialization 시
+        self.vals = []  # 리스트 생성
 
-    def insert(self, user_in):
+    def insert(self, user_in):  # 리스트 추가 Method
         if self.involve(user_in):
             print("이미 존재하는 값 입니다.")
         else:
             self.vals.append(user_in)
 
-    def involve(self, user_in):
-        for i in range(1, len(self.vals)):
-            if self.vals[i] == user_in:
-                return True
-            else:
-                return False
+    def involve(self, user_in):  # 리스트 중복 여부 확인
+        for i in range(0, len(self.vals)):
+            if self.vals[i] == user_in:  # 만약 이미 리스트에 있다면
+                return True  # Ture 를 반환하며 반복문 중단
+        return False  # 없다면 전체를 다 확인 후 False 반환
 
-    def remove(self, user_in):
-        if self.involve(user_in):
+    def remove(self, user_in):  # 리스트 값 제거
+        if self.involve(user_in):  # 존재 여부 확인
             self.vals.remove(user_in)
         else:
             print("해당 하는 값은 없습니다.")
 
-    def __str__(self):
+    def __str__(self):  # string Magic Method 정의
         self.vals.sort()
         s = ""
         for i in range(0, len(self.vals)):
