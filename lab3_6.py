@@ -7,7 +7,7 @@
 
 dic = {"name" : "이호민",
        "age" : "21",
-       "address" : "서울시 관악구 행운길 75 1층",
+       "address" : "서울시청",
        "hobby" : "프로그래밍",
        "fruit" : "사과",
        "sports" : "사이클"}
