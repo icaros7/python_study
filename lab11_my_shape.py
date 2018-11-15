@@ -189,7 +189,7 @@ print(r.area(), ", ", r.perimeter())
 print(t.area(), ", ", t.perimeter())
 # t의 변들을 리스트로 받아 출력한다.
 print(t.getSides())
-
+"""
 # 리스트 l을 정의하여, s, c와 r을 요소로 추가한다.
 l = [s, c, r]
 # l의 각 요소에 대해, 해당 요소를 출력하고, 면적과 둘레를 계산하여 출력한다.
@@ -200,5 +200,6 @@ for i in range(0,len(l)):
     print(l[i].perimeter())
 
 # for문 안에서 테스트: getRadius() 메쏘드를 수행한다.(오류 발생)
-for i in l:
-    print(l[i].getRadius())
+#for i in l:
+#    print(l[i].getRadius())
+"""
